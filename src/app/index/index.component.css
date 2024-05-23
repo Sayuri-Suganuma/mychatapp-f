@@ -1,15 +1,37 @@
 /*# sourceMappingURL=index.component.css.map */
-
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 10vh;
+  height: 40vh;
 }
 
 .title {
   color: #fa90c5;
   font-size: 30px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+.button {
+  background-color: #fa90c5;
+  width: 419px;
+  padding: 10px 0;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.create-button {
+  text-decoration: none;
+  color: white;
 }

@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { FormsModule } from '@angular/forms';
 import { IndexComponent } from './index/index.component';
+import { HeaderComponent } from './header/header.component';
+import { CreateChatroomComponent } from './create-chatroom/create-chatroom.component';
+import { ChatComponent } from './chat/chat.component';
+
 
 
 
@@ -14,7 +18,10 @@ import { IndexComponent } from './index/index.component';
   declarations: [
     AppComponent,
     SignInComponent,
-    IndexComponent
+    IndexComponent,
+    HeaderComponent,
+    CreateChatroomComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
