@@ -34,5 +34,4 @@ export class AuthService {
     const payload = { 'owner_id': ownerId, 'partner_id': partnerId };
     return this.http.post(`${this.apiUrl}/auth/chatrooms`, payload);
   }
-
 }

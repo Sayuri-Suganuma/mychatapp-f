@@ -1,1 +1,16 @@
 /*# sourceMappingURL=chat.component.css.map */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+}
+
+.title {
+  color: #ee96bd;
+  font-size: 30px;
+  margin-bottom: 50px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+

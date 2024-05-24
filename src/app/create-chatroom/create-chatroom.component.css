@@ -8,9 +8,8 @@
 }
 
 .title {
-  color: #fa90c5;
+  color: #ee96bd;
   font-size: 30px;
-  margin-bottom: 50px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -33,7 +32,7 @@
 }
 
 .button {
-  background-color: #fa90c5;
+  background-color: #ee96bd;
   display: inline-block;
   color: white;
   width: 421px;

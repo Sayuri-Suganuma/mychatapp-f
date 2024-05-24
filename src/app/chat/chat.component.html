@@ -1,7 +1,20 @@
 <div class="container">
   <h1 class="title">Chat</h1>
 
-  <div class="button">
-    <a routerLink="/chatrooms" class="create-button">Create Chatroom</a>
+  <div *ngFor="let chat of chats" class="{{ chat.user.id === ownerId ? 'chat-me' : 'chat-you' }}">
+    <div class="{{ chat.user.id === ownerId ? 'chat-me-says' : 'chat-you-says' }}">
+      {{ chat.content }}
+    </div>
+    <div class="{{ chat.user.id === ownerId ? 'chat-me-time' : 'chat-you-time' }}">
+      {{ chat.sent_at | date: 'MM/dd HH:mm' }}
+    </div>
+    <div class="{{ chat.user.id === ownerId ? 'chat-me-user' : 'chat-you-user' }}">
+      {{ chat.user.id === ownerId ? ownerId : chat.partnerEmail }}
+    </div>
   </div>
+
+  <div>
+    <a routerLink="/chatrooms" class="create-button" class="button">Create Chatroom</a>
+  </div>
+
 </div>

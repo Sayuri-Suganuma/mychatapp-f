@@ -12,36 +12,40 @@ export class CreateChatroomComponent implements OnInit {
   ownerId: string = '';
   partnerId: string = '';
   title: string = '';
+  post_res: any = '';
 
   constructor(
     private authService: AuthService,
     private chatroomService: ChatroomService,
     private router: Router,
-    ) {}
+  ) { 
+  }
 
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
+
+  
 
   chatroom() {
     console.log('click');
-  
-    if (this.ownerId && this.partnerId && this.title) {
+    if (this.partnerId && this.title) {
       console.log('Ok');
       this.chatroomService.createChatroom(this.ownerId, this.partnerId, this.title).subscribe({
         next: (response) => {
-          console.log('Chatroom created:', response);
-          localStorage.setItem('owner_id', this.ownerId);
+          this.post_res = response;
+          console.log('Chatroom created:', this.post_res);
+          console.log('Chatroom created:', this.post_res["owner_id"]);
+          localStorage.setItem('owner_id', this.post_res["owner_id"]);
           localStorage.setItem('partner_id', this.partnerId);
           localStorage.setItem('title', this.title);
-          this.router.navigate(['/chat']);
+          this.router.navigate(['/chats']);
         },
         error: (error) => {
           console.error('Error creating chatroom:', error);
         }
       });
     } else {
-      console.log('No');
+      console.log('PartnerId or title is missing');
     }
   }
-
-} 
+}
