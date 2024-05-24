@@ -18,13 +18,14 @@
 .button {
   background-color: #fa90c5;
   width: 419px;
-  padding: 10px 0;
+  padding: 10px 160px;
   border: none;
   cursor: pointer;
   margin-top: 20px;
   border-radius: 6px;
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
 
   &:hover {
     opacity: 0.9;
@@ -33,5 +34,5 @@
 
 .create-button {
   text-decoration: none;
-  color: white;
+
 }

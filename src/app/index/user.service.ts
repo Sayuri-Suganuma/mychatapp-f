@@ -14,6 +14,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getCurrentUser(): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/chatrooms`);
+    return this.http.get<User>(`${this.apiUrl}/auth/chatrooms`);
   }
 }

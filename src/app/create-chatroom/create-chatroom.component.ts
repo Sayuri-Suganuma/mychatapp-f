@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-chatroom.component.css']
 })
 export class CreateChatroomComponent implements OnInit {
-  currentUserId: string = '';
+  ownerId: string = '';
+  partnerId: string = '';
+  title: string = '';
 
   constructor(
     private authService: AuthService,
@@ -18,42 +20,28 @@ export class CreateChatroomComponent implements OnInit {
     ) {}
 
 
-  ngOnInit(): void {
-    // this.authService.getCurrentUserId().subscribe({
-    //   next: (userId: string) => {
-    //     this.currentUserId = userId;
-    //     console.log('current User ID', userId);
-    //   },
-    //   error: (error: any) => { 
-    //     console.error('not find', error);
-    //   }
-    // });
-  }
+  ngOnInit(): void {}
 
   chatroom() {
     console.log('click');
-    const ownerId = this.authService.getCurrentUserId();
-    const partnerId = 'example_partner_id';
-    const title = 'example_title';
-
-    if (ownerId && partnerId && title) {
-      console.log('OK');
-      localStorage.setItem('owner_id', ownerId);
-      localStorage.setItem('partner_id', partnerId);
-      localStorage.setItem('title', title);
-
-      this.chatroomService.createChatroom(ownerId, partnerId, title).subscribe(
-        (response: any) => {
-          console.log('create!!', response);
+  
+    if (this.ownerId && this.partnerId && this.title) {
+      console.log('Ok');
+      this.chatroomService.createChatroom(this.ownerId, this.partnerId, this.title).subscribe({
+        next: (response) => {
+          console.log('Chatroom created:', response);
+          localStorage.setItem('owner_id', this.ownerId);
+          localStorage.setItem('partner_id', this.partnerId);
+          localStorage.setItem('title', this.title);
           this.router.navigate(['/chat']);
         },
-        (error: any) => {
-          console.error('Error', error);
+        error: (error) => {
+          console.error('Error creating chatroom:', error);
         }
-    )
+      });
     } else {
-      console.log('NO');
+      console.log('No');
     }
-}
+  }
 
-}
+} 

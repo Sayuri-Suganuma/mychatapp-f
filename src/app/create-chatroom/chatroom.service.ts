@@ -1,18 +1,30 @@
-
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatroomService {
-  private baseUrl = 'http://localhost:3000/api/v1/chatrooms';
+  private baseUrl = 'http://localhost:3000/api/v1/auth/chatrooms';
 
   constructor(private http: HttpClient) { }
 
-  createChatroom(userId: string, name: string, description: string): Observable<any> {
-    const body = { user_id: userId, name, description };
-    return this.http.post<any>(this.baseUrl, body);
+  createChatroom(ownerId: string, partnerId: string, title: string) {
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    const chatroomData = {
+      "chatroom": {
+        "owner_id": ownerId,
+        "partner_id": partnerId,
+        "title": title
+      }
+    };
+
+    return this.http.post(this.baseUrl, chatroomData, { headers });
   }
 }
+

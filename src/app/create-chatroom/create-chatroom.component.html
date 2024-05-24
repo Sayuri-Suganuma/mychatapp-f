@@ -4,24 +4,25 @@
 
   <div>
     <label for="ownerId" class="sav-title">Owner ID</label>
-    <input id="ownerId" type="text" [ngModel]="currentUserId" class="form">
+    <input id="ownerId" type="text" [(ngModel)]="ownerId" 
+          name="ownerId" required class="form">
   </div>
 
   <div>
     <label for="partnerId" class="sav-title">Partner ID</label>
-    <input id="pertnerId" type="text" [value]="" class="form">
+    <input id="pertnerId" type="text" [(ngModel)]="partnerId" name="partnerId" required class="form">
   </div>
 
   <div>
     <label for="title" class="sav-title">Title</label>
-    <input type="text" class="form">
+    <input type="text" class="form" [(ngModel)]="title" name="title" required>
   </div>
 
-  <div class="button">
-    <a (click)="chatroom()" class="create-button">Let's chat!!</a>
+  <div >
+    <a (click)="chatroom()" class="create-button" class="button">Let's chat!!</a>
   </div>
 
-  <div class="back-button">
-    <a routerLink="/" class="create-button">Back</a>
+  <div>
+    <a routerLink="/" class="create-button" class="back-button">Back</a>
   </div>
 </div>

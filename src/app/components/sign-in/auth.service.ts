@@ -11,10 +11,10 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  private baseUrl = 'http://localhost:3000/api/v1'
+  private apiUrl = 'http://localhost:3000/api/v1'
 
   register(email: string, password: string) {
-    return this.http.post<HttpResponse<any>>(`${this.baseUrl}/auth`, { email, password }, { observe: 'response' });
+    return this.http.post<HttpResponse<any>>(`${this.apiUrl}/auth`, { email, password }, { observe: 'response' });
   }
 
   logout(accessToken: string, client: string, uid: string): Observable<any> {
@@ -23,19 +23,16 @@ export class AuthService {
       'client': client,
       'uid': uid,
     });
-    return this.http.delete(`${this.baseUrl}/auth`, { headers: headers });
+    return this.http.delete(`${this.apiUrl}/auth`, { headers: headers });
   }
 
-  getCurrentUserId(): string {
-    return localStorage.getItem('userId') || '';
+  login(email: string, password: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/sign_in`, { email, password });
   }
 
-  createChatroom(ownerId: string, partnerId: string, title: string): Observable<any> {
-    const body = { user_id: ownerId, partnerId, title };
-    return this.http.post<any>(this.baseUrl, body);
+  registerChatroom(ownerId: string, partnerId: string): Observable<any> {
+    const payload = { 'owner_id': ownerId, 'partner_id': partnerId };
+    return this.http.post(`${this.apiUrl}/auth/chatrooms`, payload);
   }
 
-  getCurrentUser(): Observable<any> {
-    return this.http.get<any>('api/chatrooms');
-  }
 }

@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 70vh;
+  height: 80vh;
 }
 
 .title {
@@ -34,6 +34,8 @@
 
 .button {
   background-color: #fa90c5;
+  display: inline-block;
+  color: white;
   width: 421px;
   padding: 12px 0;
   border: none;
@@ -56,6 +58,7 @@
 .back-button {
   display: block;
   background-color: #dfdddd;
+  color: white;
   width: 90px;
   padding: 9px 0;
   border: none;
@@ -64,6 +67,7 @@
   margin-right: 330px;
   border-radius: 6px;
   text-align: center;
+  text-decoration: none;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
   &:hover {
