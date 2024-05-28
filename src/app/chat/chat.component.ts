@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChatService } from './chat.service';
+import { Router } from '@angular/router';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-chat',
@@ -8,16 +10,20 @@ import { ChatService } from './chat.service';
 })
 export class ChatComponent implements OnInit {
   chats: any[] = [];
-  ownerId: number = 0;
+  ownerId: string = '';
 
-  constructor(private chatService: ChatService) {}
+  constructor(
+    private chatService: ChatService, 
+    private router: Router,
+    private sharreService: SharedService,
+    ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.ownerId = this.sharreService.getOwnerId();
+    
   }
 
-  getChats() {
-    this.chatService.getChatByOwnerId(this.ownerId).subscribe((chats: any[]) => {
-      this.chats = chats;
-    });
-  }
+
+
 }
+

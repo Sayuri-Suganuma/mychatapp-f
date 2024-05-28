@@ -10,8 +10,7 @@ import { IndexComponent } from './index/index.component';
 import { HeaderComponent } from './header/header.component';
 import { CreateChatroomComponent } from './create-chatroom/create-chatroom.component';
 import { ChatComponent } from './chat/chat.component';
-
-
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -23,6 +22,7 @@ import { ChatComponent } from './chat/chat.component';
     HeaderComponent,
     CreateChatroomComponent,
     ChatComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

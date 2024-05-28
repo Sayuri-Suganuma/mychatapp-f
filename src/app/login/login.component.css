@@ -1,10 +1,10 @@
-/*# sourceMappingURL=index.component.css.map */
+/*# sourceMappingURL=login.component.css.map */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 40vh;
+  height: 70vh;
 }
 
 .title {
@@ -14,40 +14,46 @@
 }
 
 
+.login {
+  padding: 10px;
+}
+
+.form {
+  display: block;
+  width: 400px;
+  border: 1px solid #ccc;
+  padding: 11px;
+  margin: 0 0 15px 0;
+  border-radius: 6px;
+}
 
 .button {
   background-color: #ee96bd;
-  width: 419px;
-  padding: 10px 160px;
+  width: 425px;
+  color: white;
+  font-size: 16px;
+  padding: 11px 0;
   border: none;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 8px;
   border-radius: 6px;
-  text-align: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: white;
 
   &:hover {
     opacity: 0.9;
   }
 }
 
-.create-button {
-  text-decoration: none;
-
-}
-
 .back-button {
   display: block;
+  background-color: #d0cece;
   color: white;
   width: 90px;
-  font-size: 13px;
-  background-color: #d0cece;
   padding: 8px;
-  margin-left: 14px;
+  font-size: 13px;
   border: none;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-left: 11px;
   margin-right: 330px;
   border-radius: 6px;
   text-align: center;

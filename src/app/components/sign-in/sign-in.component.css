@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 70vh;
+  height: 71vh;
 }
 
 .title {
@@ -27,11 +27,33 @@
   border-radius: 6px;
 }
 
+.login-link {
+  color: white;
+  background-color: #d0cece;
+  padding: 8px;
+  width: 190px;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin-top: 20px;
+  margin-left: 1px;
+  text-align: center;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
 .button {
   background-color: #ee96bd;
   width: 425px;
   color: white;
-  padding: 12px 0;
+  font-size: 16px;
+  padding: 11px 0;
   border: none;
   cursor: pointer;
   margin-top: 8px;

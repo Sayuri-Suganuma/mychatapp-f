@@ -1,7 +1,7 @@
 // src/app/user.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { User } from '../user.model';
 
 @Injectable({
@@ -9,11 +9,22 @@ import { User } from '../user.model';
 })
 export class UserService {
 
-  private apiUrl = 'http://localhost:3000/api/v1'; 
+  private apiUrl = 'http://localhost:3000/api/v1';
 
   constructor(private http: HttpClient) { }
 
-  getCurrentUser(): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/auth/chatrooms`);
+  getCurrentUser(): Observable<any> {
+    const userId = localStorage.getItem('userId');
+    const headers = new HttpHeaders({
+      'access-token': localStorage.getItem('access-token') || '',
+      'client': localStorage.getItem('client') || '',
+      'uid': localStorage.getItem('uid') || ''
+    });
+    return this.http.get(`${this.apiUrl}/auth/chatrooms?user_id=${userId}`, { headers });
   }
+
+  getChatroomsForUser(userId: string, headers: HttpHeaders): Observable<any> {
+    return this.http.get(`${this.apiUrl}/auth/chatrooms?user_id=${userId}`, { headers });
+  }
+
 }

@@ -1,10 +1,24 @@
-
 <div class="container">
   <h1 class="title">Chatrooms</h1>
 
-  <div>
-    <a (click)="create()" class="create-button" class="button">Create Chatroom</a>
-    <!-- <a routerLink="/chatrooms" class="create-button">back</a> -->
-  </div>
-</div>
+  <ul *ngIf="chatrooms && chatrooms.length; else noChatrooms">
+    <li *ngFor="let chatroom of chatrooms">
+    <a [routerLink]="['/chat/', chatroom.id]">  
+      <p>Owner ID: {{ chatroom.owner_id }}</p>  
+      <p>Partner ID: {{ chatroom.partner_id }}</p>  
+      <p>Title: {{ chatroom.title }}</p>
+    </a>
+    </li>
 
+  </ul>
+
+  <ng-template #noChatrooms>
+    <p>No chatrooms available.</p>
+  </ng-template>
+
+  <div>
+    <a (click)="loadChatrooms()" ></a>
+    <a routerLink="/chatrooms" class="create-button" class="button">Create Chatroom</a>
+  </div>
+ <a routerLink="/chatrooms" class="back-button">back</a>
+</div>

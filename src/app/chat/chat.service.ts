@@ -8,7 +8,10 @@ import { Observable } from 'rxjs';
 export class ChatService {
   constructor(private http: HttpClient) {}
 
-  getChatByOwnerId(ownerId: number): Observable<any[]> {
-    return this.http.get<any[]>(`/api/v1/chatrooms/${ownerId}/chats`);
+
+  
+  getChatByChatroomId(chatroomId: number): Observable<any[]> {
+    return this.http.get<any[]>(`/api/v1/chats/${chatroomId}`);
   }
+
 }
