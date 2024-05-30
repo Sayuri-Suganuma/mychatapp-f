@@ -62,7 +62,7 @@ export class AuthService {
   
   registerChatroom(ownerId: string, partnerId: string, userId: string): Observable<any> {
     const payload = { 'owner_id': ownerId, 'partner_id': partnerId, 'userId': userId };
-    return this.http.post(`${this.apiUrl}/auth/chatrooms`, payload);
+    return this.http.post(`${this.apiUrl}/chatrooms`, payload);
   }
 
   fetchCurrentUser(): Observable<any> {
@@ -71,13 +71,13 @@ export class AuthService {
       'client': localStorage.getItem('client') || '',
       'uid': localStorage.getItem('uid') || '',
     });
-    return this.http.get(`${this.apiUrl}/auth/validate_token`, { headers: headers });
+    return this.http.get(`${this.apiUrl}/validate_token`, { headers: headers });
   }
 
-  setCurrentUserId(userId: string): void {
-    this.currentUserId = userId;
-    console.log('currentUserId:', this.currentUserId);
-  }
+  // setCurrentUserId(userId: string): void {
+  //   this.currentUserId = userId;
+  //   console.log('currentUserId:', this.currentUserId);
+  // }
 
 
 

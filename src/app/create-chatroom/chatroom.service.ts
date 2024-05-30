@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ChatroomService {
-  private baseUrl = 'http://localhost:3000/api/v1/auth/chatrooms';
-  private apiUrl = 'http://localhost:3000/api/v1/auth/';
+  private baseUrl = 'http://localhost:3000/api/v1/chatrooms';
+
 
   constructor(
     private http: HttpClient,

@@ -16,6 +16,7 @@ export class CreateChatroomComponent implements OnInit {
   title: string = '';
   post_res: any = '';
   userId: string = '';
+  chatroom_id: string = '';
 
   constructor(
     private authService: AuthService,
@@ -25,6 +26,7 @@ export class CreateChatroomComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
     // const accessToken = localStorage.getItem('accessToken');
     // const client = localStorage.getItem('client');
     // const uid = localStorage.getItem('uid');
@@ -57,19 +59,21 @@ export class CreateChatroomComponent implements OnInit {
       this.chatroomService.createChatroom(this.ownerId, this.partnerId, this.title).subscribe({
         next: (response) => {
           this.post_res = response;
-          console.log('Chatroom created:', this.post_res);
           console.log('Chatroom created:', this.post_res["owner_id"]);
           console.log('Chatroom created:', this.post_res["id"]);
           console.log('userId', this.userId);
 
-          localStorage.setItem('owner_id', this.post_res["id"]);
+          localStorage.setItem('chatroom_id', this.post_res["id"]);
           localStorage.setItem('owner_id', this.post_res["owner_id"]);
           localStorage.setItem('partner_id', this.post_res["partner_id"]);
           localStorage.setItem('title', this.post_res["title"]);
 
-          this.router.navigate(['/chats', this.post_res["id"]]);
-          
+          this.router.navigate(['/chat', this.post_res["id"]]);
+
           this.sharedService.setOwnerId(this.post_res["owner_id"]);
+
+          this.chatroom_id = this.post_res["id"];
+          console.log('chatroom_id', this.chatroom_id)
         },
         error: (error) => {
           console.error('Error creating chatroom:', error);

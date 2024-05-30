@@ -20,11 +20,11 @@ export class UserService {
       'client': localStorage.getItem('client') || '',
       'uid': localStorage.getItem('uid') || ''
     });
-    return this.http.get(`${this.apiUrl}/auth/chatrooms?user_id=${userId}`, { headers });
+    return this.http.get(`${this.apiUrl}/chatrooms?user_id=${userId}`, { headers });
   }
 
   getChatroomsForUser(userId: string, headers: HttpHeaders): Observable<any> {
-    return this.http.get(`${this.apiUrl}/auth/chatrooms?user_id=${userId}`, { headers });
+    return this.http.get(`${this.apiUrl}/chatrooms?user_id=${userId}`, { headers });
   }
 
 }

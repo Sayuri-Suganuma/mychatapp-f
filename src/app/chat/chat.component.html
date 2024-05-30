@@ -1,20 +1,41 @@
 <div class="container">
-  <h1 class="title">Chat</h1>
+  <!-- <h1 class="title">Chat</h1> -->
+  <div class="title">
+    <p >{{title}}</p>
+  </div>
 
-  <div *ngFor="let chat of chats" class="{{ chat.user.id === ownerId ? 'chat-me' : 'chat-you' }}">
-    <div class="{{ chat.user.id === ownerId ? 'chat-me-says' : 'chat-you-says' }}">
-      {{ chat.content }}
-    </div>
-    <div class="{{ chat.user.id === ownerId ? 'chat-me-time' : 'chat-you-time' }}">
-      {{ chat.sent_at | date: 'MM/dd HH:mm' }}
-    </div>
-    <div class="{{ chat.user.id === ownerId ? 'chat-me-user' : 'chat-you-user' }}">
-      {{ chat.user.id === ownerId ? ownerId : chat.partnerEmail }}
+  <div *ngFor="let chat of message" class="chat-container">
+    <div class="{{ chat.sender_id === userId ? 'chat-me' : 'chat-you' }}">
+      <div class="{{ chat.sender_id === userId ? 'chat-me-says' : 'chat-you-says' }}">
+        <p>{{ chat.content }}</p>
+      </div>
+      <div class="{{ chat.sender_id === userId ? 'chat-me-time' : 'chat-you-time' }}">
+        {{ chat.sent_at | date: 'MM/dd HH:mm' }}
+      </div>
+      <div class="{{ chat.sender_id === userId ? 'chat-me-user' : 'chat-you-user' }}">
+        {{ chat.sender_id === userId ? userId : userId.email }}
+      </div>
     </div>
   </div>
 
-  <div>
-    <a routerLink="/chatrooms" class="create-button" class="button">Create Chatroom</a>
+
+  <!-- <div *ngFor="let chat of message">
+    <p>{{ chat.content }}</p>
+  </div> -->
+
+  <form>
+    <input [(ngModel)]="messageContent" type="text" name="content" required class="form">
+  </form>
+
+  <div class="send-button">
+    <a (click)="sendMessage()" type="button" class="button-sending">
+      <span class="icon"><ion-icon name="send"></ion-icon></span>
+    </a>
   </div>
 
+  <div class="create-button">
+    <a routerLink="/chatrooms" tyoe="button" class="button-creating">
+      <span class="icon"><ion-icon name="pencil-sharp"></ion-icon></span>
+    </a>
+  </div>
 </div>

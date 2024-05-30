@@ -38,7 +38,6 @@ export class IndexComponent implements OnInit {
     const uid = localStorage.getItem('uid') || '';
     const userId = localStorage.getItem('userId') || '';
 
-
     console.log('userId', userId)
     console.log('uid', uid)
     console.log('client', client)
@@ -63,10 +62,8 @@ export class IndexComponent implements OnInit {
 
   }
 
-
-
   getChatroomsForUser(userId: string, headers: HttpHeaders): Observable<any> {
-    return this.http.get(`${this.apiUrl}/auth/chatrooms?user_id=${userId}`, { headers });
+    return this.http.get(`${this.apiUrl}/chatrooms?user_id=${userId}`, { headers });
             this.router.navigate(['/chatrooms']);
   }
 

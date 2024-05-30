@@ -1,15 +1,14 @@
 <div class="container">
   <h1 class="title">Chatrooms</h1>
 
-  <ul *ngIf="chatrooms && chatrooms.length; else noChatrooms">
+  <ul *ngIf="chatrooms && chatrooms.length; else noChatrooms" class="chatroom-list">
     <li *ngFor="let chatroom of chatrooms">
-    <a [routerLink]="['/chat/', chatroom.id]">  
-      <p>Owner ID: {{ chatroom.owner_id }}</p>  
-      <p>Partner ID: {{ chatroom.partner_id }}</p>  
-      <p>Title: {{ chatroom.title }}</p>
+    <a [routerLink]="['/chat/', chatroom.id]" class="chatroom-item">  
+      <p class="chatroom-text">Owner ID: {{ chatroom.owner_id }}</p>  
+      <p class="chatroom-text">Partner ID: {{ chatroom.partner_id }}</p>  
+      <p class="chatroom-text">Title: {{ chatroom.title }}</p>
     </a>
     </li>
-
   </ul>
 
   <ng-template #noChatrooms>
