@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 
 @Injectable({
@@ -33,5 +33,5 @@ export class ChatroomService {
     return this.http.post(this.baseUrl, chatroomData, { headers });
   }
 
-}
 
+}

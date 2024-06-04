@@ -12,6 +12,7 @@ import { CreateChatroomComponent } from './create-chatroom/create-chatroom.compo
 import { ChatComponent } from './chat/chat.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChatService } from './chat/chat.service';
 
 
 
@@ -34,7 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ChatService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

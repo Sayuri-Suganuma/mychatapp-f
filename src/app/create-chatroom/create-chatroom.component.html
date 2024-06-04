@@ -4,13 +4,13 @@
 
   <div>
     <label for="ownerId" class="sav-title">Owner ID</label>
-    <input id="ownerId" type="text" [(ngModel)]="ownerId" 
-          name="ownerId" required class="form" >
+    <input id="ownerId" type="text" [(ngModel)]="this.ownerId" 
+          name="ownerId" required class="form" readonly>
   </div>
 
   <div>
     <label for="partnerId" class="sav-title">Partner ID</label>
-    <input id="pertnerId" type="text" [(ngModel)]="partnerId" name="partnerId" required class="form">
+    <input id="pertnerId" type="text" [(ngModel)]="partnerId" name="partnerId" class="form" required >
   </div>
 
   <div>
@@ -18,8 +18,8 @@
     <input type="text" class="form" [(ngModel)]="title" name="title" required>
   </div>
 
-  <div class="button">
-    <a (click)="chatroom()"  class="create-button" class="button">Let's chat !</a>
+  <div >
+    <a (click)="chatroom()" class="create-button" class="button">Let's chat !</a>
   </div>
 
   <div>

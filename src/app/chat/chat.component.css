@@ -1,42 +1,67 @@
 /*# sourceMappingURL=chat.component.css.map */
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 40vh;
+  margin-top: 120px;
 }
 
 .title {
+  display: flex;
   color: #ee96bd;
+  height: 0.1vh;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 30px;
+  align-items: center;
+  justify-content: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.title p {
+  margin-top: 0;
+}
+
+p {
+  margin: 5px 5px;
 }
 
 .form {
   border: none;
   background-color: #d0cece;
-  padding: 10px 60px;
+  padding: 3px 10px;
   border-radius: 6px;
+  width: 310px;
+  height: 38px;
   position: fixed;
-  justify-content: center;
-  margin-left: -146px;
   bottom: 30px;
   font-size: 20px;
-  line-height: 0.6;
+  line-height: 0.4;
   outline: none;
   resize: none;
 }
 
+.chat-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 9999999;
+}
+
 .send-button {
+  display: block;
   background: none;
   border: none;
   cursor: pointer;
-  bottom: 24px;
+  margin-right: 35px;
+  bottom: 28px;
   position: fixed;
+  align-items: center;
+  justify-content: center;
   z-index: 99999;
 
   ion-icon {
+    display: flex;
     position: relative;
     left: 215px;
     width: 35px;
@@ -45,17 +70,25 @@
   }
 }
 
+.sending-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .create-button {
+  display: block;
   background: none;
   border: none;
   cursor: pointer;
-  bottom: 22px;
+  bottom: 21px;
   position: fixed;
   z-index: 99999;
 
   ion-icon {
     position: relative;
-    left: -180px;
+    left: -200px;
     width: 37px;
     height: 50px;
     color: #d0cece;
@@ -66,73 +99,91 @@
   }
 }
 
+.creating-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.chat-me {
-  justify-content: flex-end;
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .chat-you {
-  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  width: 100%;
 }
 
-.chat-you-time {
-  margin-top: 3px;
-  font-size: 11px;
+.chat-me {
   display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  width: 100%;
+}
+
+
+.chat-you-time {
+  display: flex;
+  display: block;
+  font-size: 11px;
   color: #ee96bd;
-  justify-content: flex-start;
+  align-self: flex-end;
 }
 
 .chat-me-time {
+  display: flex;
   margin-top: 3px;
   font-size: 11px;
-  display: flex;
-  justify-content: flex-end;
-  right: 0;
   color: #d0cece;
+  justify-content: flex-start;
 }
 
 .chat-you-user {
+  display: flex;
   margin-bottom: 12px;
   font-size: 12px;
-  display: flex;
   color: #d0cece;
+  align-self: flex-end;
 }
 
 .chat-me-user {
+  display: flex;
   margin-bottom: 12px;
   font-size: 12px;
-  display: flex;
-  justify-content: flex-end;
   right: 0;
   color: #ee96bd;
+  justify-content: flex-start;
 }
 
 .chat-me-says {
-  /* display: inline-block; */
   position: relative;
-  margin: 7px 0 0 0;
-  padding: 10px;
+  margin: 10px 0 0 0;
+  padding: 5px;
   max-width: 250px;
   min-width: 50px;
   width: fit-content;
   border-radius: 12px;
-  color: #d0cece;
+  color: white;
   overflow: auto;
-  background: #ee96bd;
-  justify-content: flex-end;
+  background: #d0cece;
+  justify-content: flex-start;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
   /* 子要素 */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  align-self: flex-start;
 }
 
 .chat-you-says {
-  display: block;
   position: relative;
   margin: 10px 0 0 auto;
-  justify-content: flex-start;
   padding: 10px;
   max-width: 250px;
   min-width: 50px;
@@ -140,10 +191,14 @@
   border-radius: 12px;
   overflow: auto;
   color: white;
-  background: #d0cece;
+  background: #ee96bd;
+  align-self: flex-end;
+  left: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
   /* 子要素 */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  align-self: flex-end;
 }

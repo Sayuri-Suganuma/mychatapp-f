@@ -10,6 +10,7 @@
 .title {
   color: #ee96bd;
   font-size: 30px;
+  margin-bottom: 40px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -24,25 +25,29 @@
 .form {
   display: block;
   width: 400px;
-  border: 1px solid #ccc;
-  padding: 11px;
+  border: 1px solid #d0cece;
+  padding: 10px;
   margin: 0 0 15px 0;
   border-radius: 6px;
   text-align: center;
+  font-size: 17px;
+  color: rgb(162, 162, 162);
 }
 
 .button {
+  display: block;
   background-color: #ee96bd;
-  width: 425px;
   color: white;
   font-size: 16px;
-  padding: 11px 0;
+  padding: 11px 171px;
   border: none;
   cursor: pointer;
   margin-top: 8px;
   margin-left: 2px;
   border-radius: 6px;
   text-align: center;
+  text-decoration: none;
+  color: white;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
   &:hover {
@@ -65,7 +70,7 @@
   margin-left: 14px;
   border: none;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 17px;
   margin-right: 330px;
   border-radius: 6px;
   text-align: center;

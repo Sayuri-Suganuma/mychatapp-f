@@ -5,7 +5,7 @@ header {
   height: 70px;
   width: 100%;
   position: fixed;
-  display: flex;
+  /* display: flex; */
   top: 0;
   left: 0;
   right: 0;
@@ -15,20 +15,23 @@ header {
 }
 
 header ul {
-  width: 60%;
+  padding: 0;
 }
 
-header .nav-item a {
+.nav-item {
+  float: left;
   text-decoration: none;
   color: white;
-  justify-content: center;
-  width: 100%;
+  margin-top: 10px;
+  margin-right: 350px;
   cursor: pointer;
+
 
   &:hover {
     opacity: 0.7;
   }
 }
+
 
 .header-container {
   width: 100%;
@@ -39,4 +42,22 @@ header .nav-item a {
 
 .nav-item {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.nav-back {
+  float: right;
+  color: white;
+  cursor: pointer;
+  margin-top: 7px;
+  margin-left: 340px;
+
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  ion-icon {
+    width: 27px;
+    height: 25px;
+  }
 }

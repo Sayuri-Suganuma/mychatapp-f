@@ -1,19 +1,19 @@
 <div class="container">
   <!-- <h1 class="title">Chat</h1> -->
   <div class="title">
-    <p >{{title}}</p>
+    <p>{{title}}</p>
   </div>
 
-  <div *ngFor="let chat of message" class="chat-container">
-    <div class="{{ chat.sender_id === userId ? 'chat-me' : 'chat-you' }}">
-      <div class="{{ chat.sender_id === userId ? 'chat-me-says' : 'chat-you-says' }}">
+  <div *ngFor="let chat of chats" class="chat-container">
+    <div class="{{ chat.sender_id == this.userId ? 'chat-me' : 'chat-you' }}">
+      <div class="{{ chat.sender_id == this.userId ? 'chat-me-says' : 'chat-you-says' }}">
         <p>{{ chat.content }}</p>
       </div>
-      <div class="{{ chat.sender_id === userId ? 'chat-me-time' : 'chat-you-time' }}">
+      <div class="{{ chat.sender_id == this.userId ? 'chat-me-time' : 'chat-you-time' }}">
         {{ chat.sent_at | date: 'MM/dd HH:mm' }}
       </div>
-      <div class="{{ chat.sender_id === userId ? 'chat-me-user' : 'chat-you-user' }}">
-        {{ chat.sender_id === userId ? userId : userId.email }}
+      <div class="{{ chat.sender_id == this.userId ? 'chat-me-user' : 'chat-you-user' }}">
+        {{ chat.sender_id == this.userId ? this.userEmail : chat.sender_email }}
       </div>
     </div>
   </div>
@@ -23,19 +23,21 @@
     <p>{{ chat.content }}</p>
   </div> -->
 
-  <form>
+  <form class="chat-form">
     <input [(ngModel)]="messageContent" type="text" name="content" required class="form">
   </form>
 
-  <div class="send-button">
-    <a (click)="sendMessage()" type="button" class="button-sending">
+  <div class="sending-button">
+    <a (click)="sendMessage()" type="button" class="button-sending" class="send-button">
       <span class="icon"><ion-icon name="send"></ion-icon></span>
     </a>
   </div>
 
-  <div class="create-button">
-    <a routerLink="/chatrooms" tyoe="button" class="button-creating">
-      <span class="icon"><ion-icon name="pencil-sharp"></ion-icon></span>
-    </a>
+  <div class="creating-button">
+    <!-- <a routerLink="/chatrooms" tyoe="button" class="button-creating" class="create-button"> -->
+    <span class="icon"  class="create-button">
+      <ion-icon name="pencil-sharp" routerLink="/chatrooms"></ion-icon>
+    </span>
+    <!-- </a> -->
   </div>
 </div>

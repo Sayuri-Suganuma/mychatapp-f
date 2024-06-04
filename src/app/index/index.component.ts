@@ -14,6 +14,7 @@ import { ChatroomService } from '../create-chatroom/chatroom.service';
 export class IndexComponent implements OnInit {
   chatrooms: any[] = [];
   userId: string = '';
+  chats: any[] = [];
 
 
 
@@ -28,6 +29,7 @@ export class IndexComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.chatrooms = [];
     this.loadChatrooms();
   }
 

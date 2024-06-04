@@ -4,13 +4,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 110px;
+  margin-bottom: 200px;
+  margin-top: 250px;
   height: 90vh;
 }
 
 .title {
   color: #ee96bd;
+  position: fixed;
   font-size: 30px;
+  top: 85px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -20,6 +23,7 @@
   margin-top: 10px;
   line-height: 16px;
 }
+
 
 .chatroom-list {
   list-style: none;
@@ -38,6 +42,7 @@ a {
   margin-bottom: 10px;
   padding: 5px 20px 0 0;
   display: flex;
+  bottom: 30px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: #afafaf;
 }
@@ -45,15 +50,20 @@ a {
 
 .button {
   background-color: #ee96bd;
+  display: block;
   width: 418px;
-  padding: 10px 129px;
+  padding: 11px 0px;
   border: none;
   cursor: pointer;
-  margin-top: 20px;
+  bottom: 65px;
   border-radius: 6px;
   text-align: center;
-  text-decoration: none;
-  font-size: 14px;
+  align-items: center;
+  font-size: 16px;
+  margin: 0 auto;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: white;
 
@@ -63,12 +73,14 @@ a {
 }
 
 .create-button {
+  display: flex;
+  justify-content: center;
   text-decoration: none;
-
 }
-
+/* 
 .back-button {
   display: block;
+  position: fixed;
   color: white;
   width: 90px;
   font-size: 13px;
@@ -77,8 +89,8 @@ a {
   margin-left: 45px;
   border: none;
   cursor: pointer;
-  margin-top: 20px;
-  margin-right: 312px;
+  bottom: 20px;
+  margin-right: 358px;
   border-radius: 6px;
   text-align: center;
   text-decoration: none;
@@ -87,4 +99,4 @@ a {
   &:hover {
     opacity: 0.8;
   }
-}
+} */
