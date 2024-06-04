@@ -60,7 +60,7 @@ p {
   justify-content: center;
   z-index: 99999;
 
-  ion-icon {
+  :is(ion-icon) {
     display: flex;
     position: relative;
     left: 215px;
@@ -86,7 +86,7 @@ p {
   position: fixed;
   z-index: 99999;
 
-  ion-icon {
+  :is(ion-icon) {
     position: relative;
     left: -200px;
     width: 37px;
