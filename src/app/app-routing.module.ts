@@ -8,8 +8,9 @@ import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-  { path: '', component: IndexComponent },
+  { path: '/index', component: IndexComponent },
   { path: 'sign-in', component: SignInComponent },
+  { path: '', component: SignInComponent },
   { path: 'chatrooms', component: CreateChatroomComponent },
   { path: 'chatrooms/:id', component: CreateChatroomComponent },
   { path: 'chats', component: ChatComponent },

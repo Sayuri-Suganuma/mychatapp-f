@@ -24,7 +24,7 @@ export class HeaderComponent {
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
       const url = event.urlAfterRedirects;
-      this.showBackButton = !(url.includes('/login') || url.includes('/sign-in') || url === '/');
+      this.showBackButton = !(url.includes('/login') || url.includes('/sign-in') || url === '/index');
     });
   }
 
