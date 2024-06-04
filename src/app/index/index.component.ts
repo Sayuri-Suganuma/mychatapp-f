@@ -18,7 +18,8 @@ export class IndexComponent implements OnInit {
 
 
 
-  private apiUrl = 'http://localhost:3000/api/v1';
+  // private apiUrl = 'http://localhost:3000/api/v1';
+  private apiUrl = 'https://dev-sugaapp-be.sakuramobile.jp/api/v1';
 
   constructor(
     private userService: UserService,
