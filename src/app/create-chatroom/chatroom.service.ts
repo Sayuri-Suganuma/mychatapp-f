@@ -8,7 +8,8 @@ import { Observable, BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ChatroomService {
-  private baseUrl = 'http://localhost:3000/api/v1/chatrooms';
+  // private baseUrl = 'http://localhost:3000/api/v1/chatrooms';
+  private baseUrl = 'https://dev-sugaapp-fe.sakuramobile.jp/api/v1/chatrooms';
 
 
   constructor(

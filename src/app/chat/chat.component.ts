@@ -40,7 +40,8 @@ export class ChatComponent implements OnInit {
     private changeDetector: ChangeDetectorRef,
   ) { }
 
-  private apiUrl = 'http://localhost:3000/api/v1'
+  // private apiUrl = 'http://localhost:3000/api/v1';
+  private apiUrl = 'http://dev-sugaapp-fe.sakuramobile.jp/api/v1';
 
   ngOnInit(): void {
     console.log("ChatComponent::ngOnInit start");

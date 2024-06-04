@@ -17,7 +17,8 @@ export class AuthService {
     private http: HttpClient,
     ) { }
 
-  private apiUrl = 'http://localhost:3000/api/v1'
+  // private apiUrl = 'http://localhost:3000/api/v1';
+  private apiUrl = 'https://dev-sugaapp-fe.sakuramobile.jp/api/v1';
 
   register(email: string, password: string): Observable<any> {
     const payload = {

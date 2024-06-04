@@ -9,7 +9,8 @@ import { User } from '../user.model';
 })
 export class UserService {
 
-  private apiUrl = 'http://localhost:3000/api/v1';
+  // private apiUrl = 'http://localhost:3000/api/v1';
+  private apiUrl = 'https://dev-sugaapp-fe.sakuramobile.jp/api/v1';
 
   constructor(private http: HttpClient) { }
 
