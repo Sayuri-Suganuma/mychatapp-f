@@ -105,6 +105,17 @@ p {
   justify-content: center;
 }
 
+span.create-button {
+  position: absolute;
+  z-index: 1;
+}
+
+span.icon {
+  position: absolute;
+  z-index: 2;
+}
+
+
 .chat-container {
   display: flex;
   flex-direction: column;
