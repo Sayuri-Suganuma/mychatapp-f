@@ -53,7 +53,7 @@ export class SignInComponent implements OnInit {
 
           localStorage.setItem('userId', userId.toString());
 
-          this.router.navigate(['/']);
+          this.router.navigate(['/index']);
 
         } else {
           console.error('No token data!!!');
