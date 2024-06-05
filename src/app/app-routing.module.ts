@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-  { path: '/index', component: IndexComponent },
+  { path: 'index', component: IndexComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: '', component: SignInComponent },
   { path: 'chatrooms', component: CreateChatroomComponent },
