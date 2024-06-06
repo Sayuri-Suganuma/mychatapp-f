@@ -28,7 +28,7 @@ export class HeaderComponent {
     ).subscribe((event: any) => {
       const url = event.urlAfterRedirects;
       //不要なページでは"logout"を表示させない設定。
-      const isLoginOrSignIn = url.includes('/login') || url.includes('/sign-in');
+      const isLoginOrSignIn = url.includes('/login') || url.includes('/sign-up');
       const isIndex = url === '/chatrooms';
       this.showBackButton = !isLoginOrSignIn && !isIndex;
       this.showUserName = !isLoginOrSignIn;
