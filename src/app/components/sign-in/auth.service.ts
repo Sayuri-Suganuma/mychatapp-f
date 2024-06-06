@@ -63,10 +63,10 @@ export class AuthService {
     )
   }
 
-  isLoggedIn(): boolean {
-    const accessToken = localStorage.getItem('accessToken');
-    return !!accessToken;
-  }
+  // isLoggedIn(): boolean {
+  //   const accessToken = localStorage.getItem('accessToken');
+  //   return !!accessToken;
+  // }
 
 
   login(email: string, password: string): Observable<any> {
