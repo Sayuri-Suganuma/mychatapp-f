@@ -71,7 +71,7 @@ logout() {
         localStorage.removeItem('accessToken');
         localStorage.removeItem('client');
         localStorage.removeItem('uid');
-        this.router.navigate(['sign-in']);
+        this.router.navigate(['/login']);
       },
       error: (error) => {
         console.error('Error:', error);
