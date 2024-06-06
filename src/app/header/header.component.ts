@@ -11,6 +11,7 @@ import { filter } from 'rxjs/operators';
 })
 export class HeaderComponent {
   showBackButton: boolean = true;
+  showLogout: boolean = true;
   errorMessage: string = '';
 
   constructor(
@@ -24,7 +25,15 @@ export class HeaderComponent {
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
       const url = event.urlAfterRedirects;
-      this.showBackButton = !(url.includes('/login') || url.includes('/sign-in') || url === '/index');
+    //不要なページでは"logout"を表示させない設定。
+      // this.showBackButton = !(url.includes('/login') || url.includes('/sign-in') || url === '/index');
+      // this.showLogout = !(url.includes('/login') || url.includes('/sign-in'));
+
+    //簡潔に書いたコード
+      const isLoginOrSignIn = url.includes('/login') || url.includes('/sign-in');
+      const isIndex = url === '/index';
+      this.showBackButton = !isLoginOrSignIn && !isIndex;
+      this.showLogout = !isLoginOrSignIn;
     });
   }
 

@@ -61,11 +61,12 @@ p {
   z-index: 99999;
 
   :is(ion-icon) {
-    display: flex;
+    display: block;
     position: relative;
-    left: 215px;
+    left: 200px;
     width: 35px;
     height: 48px;
+    bottom: 48px;
     color: #d0cece;
   }
 }
@@ -107,14 +108,17 @@ p {
 
 span.create-button {
   position: absolute;
+  height: 1px;
+  bottom: 0;
   z-index: 1;
 }
 
 span.icon {
   position: absolute;
+  height: 0;
+  bottom: 0;
   z-index: 2;
 }
-
 
 .chat-container {
   display: flex;

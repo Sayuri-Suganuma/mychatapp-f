@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -15,6 +16,7 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
+    private router: Router,
     ) { }
 
   // private apiUrl = 'http://localhost:3000/api/v1';
@@ -42,6 +44,8 @@ export class AuthService {
         localStorage.removeItem('uid');
         localStorage.removeItem('userId');
         console.log('Logged out and local storage cleared.');
+
+        this.router.navigate(['/login']);
       }),
       catchError(error => {
         console.error('Logout failed:', error);

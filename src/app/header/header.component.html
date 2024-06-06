@@ -1,7 +1,7 @@
 <header>
   <div class="header-container">
     <ul>
-      <li style="list-style-type: none;" class="nav-item">
+      <li *ngIf="showLogout"style="list-style-type: none;" class="nav-item">
         <a (click)="logout()">
           Logout
         </a>
