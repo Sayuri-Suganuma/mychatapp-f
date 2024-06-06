@@ -45,6 +45,7 @@ export class HeaderComponent {
     this.authService.getUserInfo(accessToken, client, uid).subscribe(user => {
       const email = user.data.email;
       this.userName = this.extractUserName(email);
+      console.log('userName:', this.userName);
     }, error => {
       console.error('Failed userName:', error);
     });

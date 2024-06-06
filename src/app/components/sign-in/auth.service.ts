@@ -36,7 +36,7 @@ export class AuthService {
       'uid': uid
     });
 
-    return this.http.get(`${this.apiUrl}/auth/validate_token`);
+    return this.http.get(`${this.apiUrl}/auth/validate_token`, { headers });
   }
 
   logout(accessToken: string, client: string, uid: string): Observable<any> {
