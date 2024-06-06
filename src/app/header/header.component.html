@@ -1,11 +1,11 @@
 <header>
   <div class="header-container">
     <ul>
-      <li *ngIf="showLogout"style="list-style-type: none;" class="nav-item">
+      <li *ngIf="showLogout" style="list-style-type: none;" class="nav-item">
         <a (click)="logout()">
           Logout
         </a>
-      <li *ngIf="userName" class="username">{{ userName }}</li>
+      <li *ngIf="userName" style="list-style-type: none;" class="username">{{ userName }}</li>
       <li *ngIf="showBackButton" style="list-style-type: none;" class="nav-back" >
         <a >
           <ion-icon name="return-down-back-outline" routerLink="/index" ></ion-icon>
