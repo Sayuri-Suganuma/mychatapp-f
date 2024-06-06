@@ -35,6 +35,8 @@ export class HeaderComponent {
       this.showLogout = !isLoginOrSignIn;
     });
 
+//現在のコードの実行が完了した後にgetUserInfoが呼び出される
+  setTimeout(() => {
     const accessToken = localStorage.getItem('accessToken');
     const client = localStorage.getItem('client');
     const uid = localStorage.getItem('uid');
@@ -48,6 +50,7 @@ export class HeaderComponent {
       console.error('Failed userName:', error);
     });
   }
+  }, 0);
 }
 
   private extractUserName(email: string): string {
