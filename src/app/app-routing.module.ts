@@ -8,14 +8,14 @@ import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-  // { path: 'index', component: IndexComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'login', component: LoginComponent },
   { path: '', component: SignInComponent },
-  { path: 'chatrooms', component: CreateChatroomComponent },
+  { path: 'chatrooms', component: IndexComponent },
+  { path: 'chatrooms/new', component: CreateChatroomComponent },
+  { path: 'chat/:id', component: ChatComponent },
   // { path: 'chatrooms/:id', component: CreateChatroomComponent },
   // { path: 'chats', component: ChatComponent },
-  { path: 'chat/:id', component: ChatComponent },
 ];
 
 @NgModule({
