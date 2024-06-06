@@ -35,7 +35,6 @@ export class SignInComponent implements OnInit {
       next: (response) => {
         console.log('Full Response:', response);
         console.log(response.body);
-        // const user = response.body.user;
         const userData = response.body.data;
         const userId = userData.id;
         const headers = response.headers;

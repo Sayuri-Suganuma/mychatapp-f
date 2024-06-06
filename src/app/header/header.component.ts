@@ -37,13 +37,18 @@ export class HeaderComponent {
       this.showLogout = !isLoginOrSignIn;
     });
 
+    const accessToken = localStorage.getItem('accessToken');
+    const client = localStorage.getItem('client');
+    const uid = localStorage.getItem('uid');
 
-    this.authService.getUserInfo().subscribe(user => {
+  if (accessToken && client && uid) {
+    this.authService.getUserInfo(accessToken, client, uid).subscribe(user => {
       const email = user.data.email;
       this.userName = this.extractUserName(email);
     }, error => {
       console.error('Failed userName:', error);
     });
+  }
 }
 
   private extractUserName(email: string): string {

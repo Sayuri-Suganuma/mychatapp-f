@@ -147,10 +147,7 @@ export class ChatComponent implements OnInit {
     const partnerId = localStorage.getItem('partner_id');
     const ownerId = localStorage.getItem('owner_id');
     const senderEmail = localStorage.getItem('uid')
-    // const recipientId = localStorage.getItem('userId');
-    // if (recipientId) {
-    //   this.userId = recipientId
-    // }
+
     console.log('senderEmail', senderEmail);
 
     const headers = new HttpHeaders({
