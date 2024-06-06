@@ -32,7 +32,6 @@ header ul {
   }
 }
 
-
 .header-container {
   width: 100%;
   display: flex;
@@ -65,4 +64,6 @@ header ul {
 .username {
   color: white;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  display: inline-block;
+  margin-top: 10px;
 }
