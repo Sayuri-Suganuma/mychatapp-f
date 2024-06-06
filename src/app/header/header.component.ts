@@ -13,11 +13,12 @@ export class HeaderComponent {
   showBackButton: boolean = true;
   showLogout: boolean = true;
   errorMessage: string = '';
+  userName: string = '';
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -25,45 +26,57 @@ export class HeaderComponent {
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
       const url = event.urlAfterRedirects;
-    //不要なページでは"logout"を表示させない設定。
+      //不要なページでは"logout"を表示させない設定。
       // this.showBackButton = !(url.includes('/login') || url.includes('/sign-in') || url === '/index');
       // this.showLogout = !(url.includes('/login') || url.includes('/sign-in'));
 
-    //簡潔に書いたコード
+      //簡潔に書いたコード
       const isLoginOrSignIn = url.includes('/login') || url.includes('/sign-in');
       const isIndex = url === '/index';
       this.showBackButton = !isLoginOrSignIn && !isIndex;
       this.showLogout = !isLoginOrSignIn;
     });
+
+
+    this.authService.getUserInfo().subscribe(user => {
+      const email = user.data.email;
+      this.userName = this.extractUserName(email);
+    }, error => {
+      console.error('Failed userName:', error);
+    });
+}
+
+  private extractUserName(email: string): string {
+    return email.split('@')[0]
   }
 
 
-  logout() {
-    console.log('logout clicked');
-    const accessToken = localStorage.getItem('accessToken');
-    const client = localStorage.getItem('client');
-    const uid = localStorage.getItem('uid');
+logout() {
+  console.log('logout clicked');
+  const accessToken = localStorage.getItem('accessToken');
+  const client = localStorage.getItem('client');
+  const uid = localStorage.getItem('uid');
 
-    if (accessToken && client && uid) {
-      console.log('OK');
+  if (accessToken && client && uid) {
+    console.log('OK');
 
-      this.authService.logout(accessToken, client, uid).subscribe({
+    this.authService.logout(accessToken, client, uid).subscribe({
 
-        next: () => {
-          console.log('Success!!')
-          localStorage.removeItem('accessToken');
-          localStorage.removeItem('client');
-          localStorage.removeItem('uid');
-          this.router.navigate(['sign-in']);
-        },
-        error: (error) => {
-          console.error('Error:', error);
-          this.errorMessage = 'Could not logout.';
-        }
-      })
-    } else {
-      console.log('NO');
-    }
+      next: () => {
+        console.log('Success!!')
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('client');
+        localStorage.removeItem('uid');
+        this.router.navigate(['sign-in']);
+      },
+      error: (error) => {
+        console.error('Error:', error);
+        this.errorMessage = 'Could not logout.';
+      }
+    })
+  } else {
+    console.log('NO');
   }
+}
 
 }

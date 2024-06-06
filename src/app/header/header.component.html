@@ -5,7 +5,7 @@
         <a (click)="logout()">
           Logout
         </a>
-      </li>
+      <li *ngIf="userName" class="username">{{ userName }}</li>
       <li *ngIf="showBackButton" style="list-style-type: none;" class="nav-back" >
         <a >
           <ion-icon name="return-down-back-outline" routerLink="/index" ></ion-icon>

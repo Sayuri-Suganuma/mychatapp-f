@@ -77,7 +77,6 @@ p {
   justify-content: center;
 }
 
-
 .create-button {
   display: block;
   background: none;
@@ -88,10 +87,11 @@ p {
   z-index: 99999;
 
   :is(ion-icon) {
-    position: relative;
-    left: -200px;
+    position: fixed;
+    left: 201px;
     width: 37px;
     height: 50px;
+    bottom: 27px;
     color: #d0cece;
   }
 

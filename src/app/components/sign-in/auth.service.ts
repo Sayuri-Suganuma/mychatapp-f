@@ -29,6 +29,9 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/auth`, payload, { observe: 'response' });
   }
 
+  getUserInfo(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/auth/validate_token`);
+  }
 
   logout(accessToken: string, client: string, uid: string): Observable<any> {
     const headers = new HttpHeaders({
