@@ -52,7 +52,7 @@ export class SignInComponent implements OnInit {
 
           localStorage.setItem('userId', userId.toString());
 
-          this.router.navigate(['/index']);
+          this.router.navigate(['/chatrooms']);
 
         } else {
           console.error('No token data!!!');

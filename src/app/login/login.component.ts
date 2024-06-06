@@ -39,7 +39,7 @@ export class LoginComponent {
             localStorage.setItem('userId', userId);
   
             console.log('Login successful, userId:', userId);
-            this.router.navigate(['/index']);
+            this.router.navigate(['/chatrooms']);
           } else {
   
             console.error('Login failed');
