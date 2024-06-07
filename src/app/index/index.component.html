@@ -3,7 +3,7 @@
 
   <ul *ngIf="chatrooms && chatrooms.length; else noChatrooms" class="chatroom-list">
     <li *ngFor="let chatroom of chatrooms">
-    <a [routerLink]="['/chat/', chatroom.id]" class="chatroom-item">  
+    <a [routerLink]="['/chatrooms/', chatroom.id]" class="chatroom-item">  
       <p class="chatroom-text">Owner ID: {{ chatroom.owner_id }}</p>  
       <p class="chatroom-text">Partner ID: {{ chatroom.partner_id }}</p>  
       <p class="chatroom-text">Title: {{ chatroom.title }}</p>
