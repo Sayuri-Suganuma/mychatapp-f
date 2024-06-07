@@ -26,12 +26,9 @@ export class UserService {
   }
 
 
-  // getChatroomsForUser(userId: string, headers: HttpHeaders): Observable<any> {
-  //   return this.http.get(`${this.apiUrl}/chatrooms?user_id=${userId}`, { headers });
-  // }
-
   getChatroomsForUser(userId: string, headers: HttpHeaders): Observable<any> {
-    return this.http.get(`${this.apiUrl}/chatrooms`, { headers });
+    console.log('Sending request with userId:', userId);
+    return this.http.get(`${this.apiUrl}/chatrooms?user_id=${userId}`, { headers });
   }
 
   // getChatroomsForUser(headers: HttpHeaders): Observable<any> {
