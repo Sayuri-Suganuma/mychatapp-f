@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: '', component: SignInComponent },
   { path: 'chatrooms', component: IndexComponent },
   { path: 'chatrooms/new', component: CreateChatroomComponent },
-  { path: 'chatromms/:id', component: ChatComponent },
+  { path: 'chatrooms/:id', component: ChatComponent },
   { path: '**', redirectTo: '/sign-up' },
 ];
 
