@@ -52,7 +52,7 @@ export class IndexComponent implements OnInit {
       'uid': uid,
     });
 
-    this.userService.getChatroomsForUser(this.userId, headers).subscribe(
+    this.userService.getChatroomsForUser(userId, headers).subscribe(
       (chatrooms: any) => {
         this.chatrooms = chatrooms;
         console.log('chatrooms:', this.chatrooms);
