@@ -65,9 +65,9 @@ export class IndexComponent implements OnInit {
 
   }
 
-  getChatroomsForUser(userId: string, headers: HttpHeaders): Observable<any> {
-    return this.http.get(`${this.apiUrl}/chatrooms?user_id=${userId}`, { headers });
-            this.router.navigate(['/chatrooms']);
-  }
+  // getChatroomsForUser(userId: string, headers: HttpHeaders): Observable<any> {
+  //   return this.http.get(`${this.apiUrl}/chatrooms?user_id=${userId}`, { headers });
+  //           this.router.navigate(['/chatrooms']);
+  // }
 
 }

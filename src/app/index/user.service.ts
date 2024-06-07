@@ -15,17 +15,26 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getCurrentUser(): Observable<any> {
-    const userId = localStorage.getItem('userId');
+    // const userId = localStorage.getItem('userId');
     const headers = new HttpHeaders({
       'access-token': localStorage.getItem('access-token') || '',
       'client': localStorage.getItem('client') || '',
       'uid': localStorage.getItem('uid') || ''
     });
-    return this.http.get(`${this.apiUrl}/chatrooms?user_id=${userId}`, { headers });
+    // return this.http.get(`${this.apiUrl}/chatrooms?user_id=${userId}`, { headers });
+    return this.http.get(`${this.apiUrl}/current_user`, { headers })
   }
+
+
+  // getChatroomsForUser(userId: string, headers: HttpHeaders): Observable<any> {
+  //   return this.http.get(`${this.apiUrl}/chatrooms?user_id=${userId}`, { headers });
+  // }
 
   getChatroomsForUser(userId: string, headers: HttpHeaders): Observable<any> {
-    return this.http.get(`${this.apiUrl}/chatrooms?user_id=${userId}`, { headers });
+    return this.http.get(`${this.apiUrl}/chatrooms`, { headers });
   }
 
+  // getChatroomsForUser(headers: HttpHeaders): Observable<any> {
+  //   return this.http.get(`${this.apiUrl}/chatrooms`, { headers });
+  // }
 }
